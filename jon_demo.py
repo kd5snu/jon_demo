@@ -8,6 +8,14 @@ import sys
 import opc
 #import color_utils
 
+fps = 30         # frames per second
+density = 144
+length = 3.0
+
+n_pixels = density * length
+pulse_width = n_pixels / 6.
+increment_val = pulse_width / 180.
+
 
 #-------------------------------------------------------------------------------
 # handle command line
@@ -43,16 +51,6 @@ print('')
 print('    sending pixels forever (control-c to exit)...')
 print('')
 
-density = 144
-length = 3.0
-
-n_pixels = density * length  # number of pixels in the included "wall" layout
-fps = 30         # frames per second
-
-pulse_width = n_pixels / 6.
-increment_val = pulse_width / 180.
-
-#points = [[0 for j in range(3)] for i in range(density * int(length))]
 
 #generate white fade
 start_pixel = -(pulse_width)
